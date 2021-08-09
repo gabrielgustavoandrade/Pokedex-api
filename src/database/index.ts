@@ -109,7 +109,7 @@ export const getPokemonsPaginate = async (page: string): Promise<Return> => {
         inner join weather w2 ON w2.id = p.weather2 
         order by
       p.id
-      limit 9 offset ${page}0;`;
+      limit 12 offset ${page}0;`;
     const res = await pool.query(sql);
     return {
       message: "Pokemons buscado com sucesso!",
