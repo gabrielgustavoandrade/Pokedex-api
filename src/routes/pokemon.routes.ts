@@ -11,7 +11,7 @@ import {
 const router: Router = Router();
 
 router.get("/findAll", findAll);
-router.get("/findPaginate", findPaginate);
+router.get("/findPaginate/:page", findPaginate);
 router.post("/insert", insertNew);
 
 router.route("/:pokemonId").get(findOne).put(updateOne).delete(deleteOne);
