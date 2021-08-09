@@ -100,7 +100,7 @@ export const getPokemonsPaginate = async (page: string): Promise<Return> => {
   try {
     const sql = `
     select
-     p.id, p.name, t.type as type1, t2.type as type2, w.weather as weather1, w2.weather as weather2, p.def, p.atk, p.sta
+     p.id, p.name, t.type as type1, t2.type as type2, w.weather as weather1, w2.weather as weather2, p.def, p.atk, p.sta, (select count(id) / 12 from pokemon p2) as totalPage
     from
       pokemon p
         inner join type t ON t.id = p.type1 
