@@ -2,6 +2,8 @@
 
 Este é o repositorio da API da Pokedex!
 
+Fiz o deploy dessa aplicação, essa aqui é a [url](https://red-fox-pokedex-api.herokuapp.com)
+
 Aqui tem algumas coisas:
 - Criei um algoritmo e com a ajuda de uma biblioteca o XLS é convertido em JSON e os dados são inseridos no banco de dados.
 - No banco de dados eu usei postgres, por ser uma aplicação simples optei por não utilizar TypeORM.
