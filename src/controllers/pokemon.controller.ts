@@ -6,7 +6,7 @@ import {
   getPokemons,
   insertPokemon,
   updatePokemon,
-} from "../Database";
+} from "../database";
 
 export const findAll = async (req: Request, res: Response): Promise<void> => {
   const { message, error, result, status } = await getPokemons();

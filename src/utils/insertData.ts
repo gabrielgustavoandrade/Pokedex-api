@@ -1,5 +1,5 @@
 import excelToJson from "convert-excel-to-json";
-import { insertPokemonFromJson, insertType, insertWeather } from "../Database";
+import { insertPokemonFromJson, insertType, insertWeather } from "../database";
 
 export async function insertExcel() {
   //   let result = [];

@@ -1,6 +1,6 @@
 import { Pool } from "pg";
 import * as httpStatus from "http-status";
-import { Pokemon, Return, Type, Weather } from "../utils/Types";
+import { Pokemon, Return, Type, Weather } from "../utils/types";
 
 const pool = new Pool({
   connectionString:
