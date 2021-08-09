@@ -99,17 +99,17 @@ export const getPokemons = async (): Promise<Return> => {
 export const getPokemonsPaginate = async (page: string): Promise<Return> => {
   try {
     const sql = `
-      select
-        p.name, t.type, t2.type, w.weather, w2.weather
-      from
-        pokemon p
-      inner join type t ON t.id = p.type1 
-      inner join type t2 ON t2.id = p.type2
-      inner join weather w ON w.id = p.weather1 
-      inner join weather w2 ON w2.id = p.weather2 
-      order by
-        p.id
-      limit 10 offset ${page}0;`;
+    select
+     p.id, p.name, t.type as type1, t2.type as type2, w.weather as weather1, w2.weather as weather2, p.def, p.atk, p.sta
+    from
+      pokemon p
+        inner join type t ON t.id = p.type1 
+        inner join type t2 ON t2.id = p.type2
+        inner join weather w ON w.id = p.weather1 
+        inner join weather w2 ON w2.id = p.weather2 
+        order by
+      p.id
+      limit 9 offset ${page}0;`;
     const res = await pool.query(sql);
     return {
       message: "Pokemons buscado com sucesso!",
