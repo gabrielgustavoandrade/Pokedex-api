@@ -2,6 +2,7 @@ import { Response, Request } from "express";
 import {
   deletePokemon,
   getPokemon,
+  getPokemonsPaginate,
   getPokemons,
   insertPokemon,
   updatePokemon,
@@ -9,6 +10,11 @@ import {
 
 export const findAll = async (req: Request, res: Response): Promise<void> => {
   const { message, error, result, status } = await getPokemons();
+  res.status(status).send({ message: message, error: error, result: result });
+};
+
+export const findPaginate = async (req: Request, res: Response): Promise<void> => {
+  const { message, error, result, status } = await getPokemonsPaginate(req.params.page);
   res.status(status).send({ message: message, error: error, result: result });
 };
 

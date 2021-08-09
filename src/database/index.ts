@@ -96,6 +96,35 @@ export const getPokemons = async (): Promise<Return> => {
   }
 };
 
+export const getPokemonsPaginate = async (page: string): Promise<Return> => {
+  try {
+    const sql = `
+      select
+        p.name, t.type, t2.type, w.weather, w2.weather
+      from
+        pokemon p
+      inner join type t ON t.id = p.type1 
+      inner join type t2 ON t2.id = p.type2
+      inner join weather w ON w.id = p.weather1 
+      inner join weather w2 ON w2.id = p.weather2 
+      order by
+        p.id
+      limit 10 offset ${page}0;`;
+    const res = await pool.query(sql);
+    return {
+      message: "Pokemons buscado com sucesso!",
+      status: httpStatus.OK,
+      result: res.rows,
+    };
+  } catch (error) {
+    return {
+      error,
+      message: "erro ao buscar os pokemons",
+      status: httpStatus.INTERNAL_SERVER_ERROR,
+    };
+  }
+};
+
 export const getPokemon = async (id: number): Promise<Return> => {
   try {
     const sql = `SELECT * FROM pokemon WHERE id = ${id}`;
