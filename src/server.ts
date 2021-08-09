@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/pokemon", pokemonRoutes);
 
-app.listen(8080, async () => {
-  console.log(`servidor rodando em http://localhost:8080`);
+app.listen(process.env.PORT || 8080, async () => {
+  console.log(`servidor rodando`);
   // await insertExcel();
 });
