@@ -1,36 +1,34 @@
-# Pokedex-api
+# The Pokedex
 
-Este é o repositorio da API da Pokedex!
+## Api version
 
-Fiz o deploy dessa aplicação, essa aqui é a [url](https://red-fox-pokedex-api.herokuapp.com)
+I deployed this application, here [is](https://red-fox-pokedex-api.herokuapp.com)
 
-Aqui tem algumas coisas:
-- Criei um algoritmo e com a ajuda de uma biblioteca o XLS é convertido em JSON e os dados são inseridos no banco de dados.
-- No banco de dados eu usei postgres, por ser uma aplicação simples optei por não utilizar TypeORM.
-- Criei as rotas de inclusão, exclusão, alteração, encontrar todos, encontrar paginado e encontrar por id.
+- I build an algorithm to convert the XLS file to JSON and insert the data on the database.
+- I use postgres, and because it is a simple application i decide to not use TypeORM.
+- I built the delete, update, insert, find all, find paginate and by id routes.
 
-A wep está nesse [repositorio](https://github.com/gabrielgustavoandrade/teste-desenvolvimento-web/tree/Gabriel-Andrade).
+Here is the web [repositorie](https://github.com/gabrielgustavoandrade/pokedex-web).
 
-## Construído com
+## Built with
 
 - [Node.js](https://github.com/nodejs/node)
 - [Npm](https://github.com/npm/cli)
 - [TypeScript](https://github.com/microsoft/TypeScript)
 - [Express](https://expressjs.com)
 - [Postgres](https://www.postgresql.org)
-(e algumas outras coisas)
 
-## Como executar
+## How run
 
-Para executar a aplicação você irá precisar de:
+You will need:
 - [Node.js](https://github.com/nodejs/node)
 - [Npm](https://github.com/npm/cli)
 
 ```javascript
-// para baixar as dependências
+// to download the depencies
 npm install
 
-//para executar
+//to run
 npm dev
 
 ```
